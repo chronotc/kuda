@@ -3,7 +3,8 @@ const fs = Bluebird.promisifyAll(require('fs'));
 const path = require('path');
 const { promptNewService, promptRemoteState } = require('../lib/prompts');
 
-const INIT_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
+const CWD = process.cwd();
+const INIT_FILE_PATH = path.resolve(CWD, 'pit.json');
 
 module.exports = () => {
   const exists = fs.existsSync(INIT_FILE_PATH);
@@ -17,7 +18,15 @@ module.exports = () => {
   };
 
   return promptNewService()
-    .then(service => initFile.services.push({ name: service }))
+    .then(service => {
+      const servicePathExist = fs.existsSync(path.resolve(CWD, service));
+
+      if (!servicePathExist) {
+        throw new Error(`Could not find service: "${service}" specified`);
+      }
+
+      initFile.services.push({ name: service });
+    })
     .then(() => promptRemoteState())
     .then(remoteState => initFile.remoteState = remoteState)
     .then(() => writeJsonToFile(initFile));
