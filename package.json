@@ -1,0 +1,24 @@
+{
+  "name": "pit",
+  "version": "1.0.0",
+  "description": "Simple deployment tool for monorepo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chronotc/pit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chronotc/pit/issues"
+  },
+  "homepage": "https://github.com/chronotc/pit#readme",
+  "dependencies": {
+    "inquirer": "^3.2.1",
+    "minimist": "^1.2.0"
+  }
+}
