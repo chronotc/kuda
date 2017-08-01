@@ -2,8 +2,7 @@ const fileHandler = require('../lib/file-handler');
 const path = require('path');
 const { promptNewService, promptRemoteState } = require('../lib/prompts');
 
-const CWD = process.cwd();
-const INIT_FILE_PATH = path.resolve(CWD, 'pit.json');
+const INIT_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
 
 module.exports = () => {
   const exists = fileHandler.exists(INIT_FILE_PATH);
@@ -18,13 +17,8 @@ module.exports = () => {
 
   return promptNewService()
     .then(service => {
-      const servicePathExist = fileHandler.exists(path.resolve(CWD, service));
-
-      if (!servicePathExist) {
-        throw new Error(`Could not find service: "${service}" specified`);
-      }
-
       initFile.services.push({ name: service });
+      return fileHandler.verifyPackageJson(service);
     })
     .then(() => promptRemoteState())
     .then(remoteState => initFile.remoteState = remoteState)
