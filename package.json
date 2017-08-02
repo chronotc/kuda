@@ -1,5 +1,5 @@
 {
-  "name": "pit",
+  "name": "kuda",
   "version": "1.0.0",
   "description": "Simple deployment tool for monorepo",
   "main": "index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chronotc/pit.git"
+    "url": "git+https://github.com/chronotc/kuda.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chronotc/pit/issues"
+    "url": "https://github.com/chronotc/kuda/issues"
   },
-  "homepage": "https://github.com/chronotc/pit#readme",
+  "homepage": "https://github.com/chronotc/kuda#readme",
   "dependencies": {
     "auto-bind": "^1.1.0",
     "aws-sdk": "^2.94.0",

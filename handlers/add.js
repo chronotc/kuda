@@ -2,23 +2,23 @@ const path = require('path');
 
 const { promptNewService } = require('../lib/prompts');
 const fileHandler = require('../lib/file-handler');
-const PitJsonHandler = require('../lib/pit-json-handler');
+const KudaJsonHandler = require('../lib/kuda-json-handler');
 const PackageJsonHandler = require('../lib/package-json-handler');
-const pitJsonHandler = new PitJsonHandler({ fileHandler });
+const kudaJsonHandler = new KudaJsonHandler({ fileHandler });
 const packageJsonHandler = new PackageJsonHandler({ fileHandler });
 
-const PIT_JSON_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
+const KUDA_JSON_FILE_PATH = path.resolve(process.cwd(), 'kuda.json');
 
 module.exports = () => {
-  const exists = fileHandler.exists(PIT_JSON_FILE_PATH);
+  const exists = fileHandler.exists(KUDA_JSON_FILE_PATH);
   if (!exists) {
-    return console.error(`Could not find pit.json in ${PIT_JSON_FILE_PATH}`);
+    return console.error(`Could not find kuda.json in ${KUDA_JSON_FILE_PATH}`);
   }
 
   return promptNewService()
     .then(service =>
       Promise.all([
-        pitJsonHandler.writeService(service),
+        kudaJsonHandler.writeService(service),
         packageJsonHandler.writeService(service)
       ])
     )
