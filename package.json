@@ -14,7 +14,12 @@
     "type": "git",
     "url": "git+https://github.com/chronotc/kuda.git"
   },
-  "keywords": ["monorepo", "deploy", "task", "single"],
+  "keywords": [
+    "monorepo",
+    "deploy",
+    "task",
+    "single"
+  ],
   "author": "chronotc",
   "license": "ISC",
   "bugs": {
@@ -25,6 +30,7 @@
     "auto-bind": "^1.1.0",
     "aws-sdk": "^2.94.0",
     "bluebird": "^3.5.0",
+    "chalk": "^2.0.1",
     "inquirer": "^3.2.1",
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",

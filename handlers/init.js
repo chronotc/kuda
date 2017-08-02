@@ -1,4 +1,5 @@
 const path = require('path');
+const chalk = require('chalk');
 
 const { promptNewService, promptRemoteState, promptReinitialize } = require('../lib/prompts');
 const fileHandler = require('../lib/file-handler');
@@ -39,6 +40,5 @@ function initialize () {
     )
     .then(() => promptRemoteState())
     .then(remoteStatePath => kudaJsonHandler.writeRemoteStatePath(remoteStatePath))
-    .then(() => remoteStateHandler.createEmptyState())
-    .catch(console.error);
+    .catch(err => console.log(chalk.red(err.stack)));
 }
