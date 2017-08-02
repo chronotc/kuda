@@ -5,11 +5,9 @@ const { promptNewService, promptRemoteState, promptReinitialize } = require('../
 const fileHandler = require('../lib/file-handler');
 const KudaJsonHandler = require('../lib/kuda-json-handler');
 const PackageJsonHandler = require('../lib/package-json-handler');
-const RemoteStateHandler = require('../lib/remote-state-handler');
 
 const kudaJsonHandler = new KudaJsonHandler({ fileHandler });
 const packageJsonHandler = new PackageJsonHandler({ fileHandler });
-const remoteStateHandler = new RemoteStateHandler({ kudaJsonHandler });
 
 const KUDA_JSON_FILE_PATH = path.resolve(process.cwd(), 'kuda.json');
 

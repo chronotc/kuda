@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "name": "foo"
+    },
+    {
+      "name": "bar"
+    }
+  ],
+  "remoteState": "monorepo/{KUDA_ENV}/kudastate"
+}
