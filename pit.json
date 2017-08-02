@@ -2,10 +2,7 @@
   "services": [
     {
       "name": "lib"
-    },
-    {
-      "name": "testing"
     }
   ],
-  "remoteState": "s3://fdsfj"
+  "remoteState": "silla-test/hello.json"
 }

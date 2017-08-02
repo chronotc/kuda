@@ -1,28 +1,6 @@
 {
-  "name": "lib",
-  "version": "1.0.0",
-  "description": "",
-  "main": "add-service-command-handler.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "_bitField": 0,
   "pit": {
-    "tasks": [
-      {
-        "name": "echoing",
-        "command": "echo hello"
-      },
-      {
-        "name": "error",
-        "command": "echo {TEST}"
-      },
-      {
-        "name": "echoing 2",
-        "command": "echo hello2"
-      }
-    ]
+    "tasks": []
   }
 }
