@@ -13,7 +13,7 @@
     "tasks": [
       {
         "name": "echoing",
-        "command": "echo hello"
+        "command": "cd lib && mkdir -p hello && touch greatness"
       },
       {
         "name": "error",

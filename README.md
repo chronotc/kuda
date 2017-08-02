@@ -29,7 +29,7 @@ pit.json
       name: 'bar'
     }
   ],
-  remoteState: s3://blah blah
+  remoteState: s3://blah/{ENV}/pitstate
 ```
 This will run task(s) for foo and then task(s) for bar.
 
