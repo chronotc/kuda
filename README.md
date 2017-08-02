@@ -1,8 +1,6 @@
 # kuda
 Simple deployment tool for monorepo
 
-- kuda `deploy` will run tasks for services defined in `kuda.json` serially providing that the remoteState has a lower version.
-
 ## Commands
 
 ### init
@@ -35,7 +33,7 @@ Thus, in order to trigger tasks to run, the user is required to increment the `v
 KUDA_ENV=staging kuda deploy
 ```
 
-## Typical folder structure
+### Typical folder structure
 ```
 monorepo
 ├── foo
@@ -47,7 +45,7 @@ monorepo
 ├── kuda.json
 ```
 
-## kuda.json
+### kuda.json
 ```
   services: [
     {
@@ -61,7 +59,7 @@ monorepo
 ```
 This will run task(s) for foo and then task(s) for bar.
 
-## foo/package.json
+### foo/package.json
 ```
 name: 'foo'
 version: 0.0.1,
@@ -79,7 +77,7 @@ kuda: {
 }
 ```
 
-## remoteState
+### remoteState
 ```
 services: {
   foo: {
