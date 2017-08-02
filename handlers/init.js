@@ -31,4 +31,3 @@ module.exports = () => {
     .then(() => remoteStateHandler.createEmptyState())
     .catch(console.error);
 };
-

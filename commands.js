@@ -7,9 +7,9 @@ module.exports = {
     handler: initHandler
   },
   add: {
-    handler: addHandler,
+    handler: addHandler
   },
   deploy: {
     handler: deployHandler
   }
-}
+};

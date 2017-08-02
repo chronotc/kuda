@@ -1,5 +1,3 @@
-const path = require('path');
-
 const fileHandler = require('../lib/file-handler');
 const taskHandler = require('../lib/task-handler');
 const ServiceHandler = require('../lib/service-handler');
@@ -15,9 +13,6 @@ const remoteStateHandler = new RemoteStateHandler({ kudaJsonHandler });
 const serviceHandler = new ServiceHandler({ taskHandler, remoteStateHandler, packageJsonHandler });
 const deployCommandHandler = new DeployCommandHandler({ fileHandler, serviceHandler });
 
-const KUDA_JSON_FILE_PATH = path.resolve(process.cwd(), 'kuda.json');
-
 module.exports = () => {
   return deployCommandHandler.deployRegisteredServices();
 };
-
