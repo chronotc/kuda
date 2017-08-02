@@ -1,13 +1,13 @@
 {
   "name": "kuda",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple deployment tool for monorepo",
   "main": "index.js",
   "engines": {
     "node": ">=6.10.3"
   },
   "bin": {
-    "kuda": "node index.js"
+    "kuda": "./bin/kuda"
   },
   "scripts": {
     "start": "node index.js",
