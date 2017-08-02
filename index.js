@@ -3,6 +3,8 @@ const SUPPORTED_COMMANDS = require('./commands');
 
 const { _ } = argv;
 
+// console.log(process.env);
+
 const capturedCommand = _.find(arg => !!SUPPORTED_COMMANDS[arg]);
 
 if (!capturedCommand) {
