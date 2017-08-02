@@ -1,8 +1,0 @@
-{
-  "services": [
-    {
-      "name": "lib"
-    }
-  ],
-  "remoteState": "silla-test/pitstate"
-}
