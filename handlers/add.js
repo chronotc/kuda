@@ -1,6 +1,10 @@
-const fileHandler = require('../lib/file-handler');
 const path = require('path');
-const { promptNewService, promptRemoteState } = require('../lib/prompts');
+
+const { promptNewService } = require('../lib/prompts');
+const fileHandler = require('../lib/file-handler');
+const AddServiceCommandHandler = require('../lib/add-service-command-handler');
+
+const addServiceCommandHandler = new AddServiceCommandHandler( { fileHandler });
 
 const PIT_JSON_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
 
@@ -11,9 +15,9 @@ module.exports = () => {
   }
 
   return promptNewService()
-    .then(service => fileHandler.addService(service))
-    .then(() => promptRemoteState())
-    .then(remoteState => pitJson.remoteState = remoteState)
-    .then(() => fileHandler.writeJson(PIT_JSON_FILE_PATH, pitJson));
+    .then(service => addServiceCommandHandler.addService(service))
+    .catch(console.error);
 };
+
+
 

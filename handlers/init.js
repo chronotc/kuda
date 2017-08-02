@@ -1,12 +1,12 @@
+const path = require('path');
+
+const { promptNewService, promptRemoteState } = require('../lib/prompts');
 const fileHandler = require('../lib/file-handler');
 const AddServiceCommandHandler = require('../lib/add-service-command-handler');
 const RemoteStateHandler = require('../lib/remote-state-handler');
 
 const addServiceCommandHandler = new AddServiceCommandHandler( { fileHandler });
 const remoteStateHandler = new RemoteStateHandler({ fileHandler });
-
-const path = require('path');
-const { promptNewService, promptRemoteState } = require('../lib/prompts');
 
 const PIT_JSON_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
 

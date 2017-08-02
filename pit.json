@@ -2,6 +2,9 @@
   "services": [
     {
       "name": "lib"
+    },
+    {
+      "name": "testing"
     }
   ],
   "remoteState": "s3://fdsfj"
