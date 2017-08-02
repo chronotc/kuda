@@ -1,11 +1,12 @@
 const initHandler = require('./handlers/init');
+const addHandler = require('./handlers/add');
 
 module.exports = {
   init: {
     handler: initHandler
   },
   add: {
-    handler: () => {},
+    handler: addHandler,
   },
   deploy: {
     handler: () => {}

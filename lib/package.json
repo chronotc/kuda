@@ -1,0 +1,15 @@
+{
+  "name": "lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-service-command-handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pit": {
+    "tasks": []
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "services": [
+    {
+      "name": "lib"
+    }
+  ],
+  "remoteState": "s3://fdsfj"
+}

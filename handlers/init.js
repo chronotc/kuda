@@ -1,4 +1,10 @@
 const fileHandler = require('../lib/file-handler');
+const AddServiceCommandHandler = require('../lib/add-service-command-handler');
+const RemoteStateHandler = require('../lib/remote-state-handler');
+
+const addServiceCommandHandler = new AddServiceCommandHandler( { fileHandler });
+const remoteStateHandler = new RemoteStateHandler({ fileHandler });
+
 const path = require('path');
 const { promptNewService, promptRemoteState } = require('../lib/prompts');
 
@@ -7,21 +13,14 @@ const PIT_JSON_FILE_PATH = path.resolve(process.cwd(), 'pit.json');
 module.exports = () => {
   const exists = fileHandler.exists(PIT_JSON_FILE_PATH);
   if (exists) {
-    return console.log('pit.json file exist. Repository is already initialized!');
+    return console.error('pit.json file exist. Repository is already initialized!');
   }
 
-  let pitJson = {
-    services: [],
-    remoteState: ''
-  };
-
-  return promptNewService()
-    .then(service => {
-      pitJson.services.push({ name: service });
-      return fileHandler.verifyPackageJson(service);
-    })
+  return fileHandler.writeJson(PIT_JSON_FILE_PATH, {})
+    .then(() => promptNewService())
+    .then(service => addServiceCommandHandler.addService(service))
     .then(() => promptRemoteState())
-    .then(remoteState => pitJson.remoteState = remoteState)
-    .then(() => fileHandler.writeJson(PIT_JSON_FILE_PATH, pitJson));
+    .then(remoteState => remoteStateHandler.updateRemoteStateInPitJson(remoteState))
+    .catch(console.error);
 };
 

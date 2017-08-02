@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/chronotc/pit#readme",
   "dependencies": {
+    "auto-bind": "^1.1.0",
     "bluebird": "^3.5.0",
     "inquirer": "^3.2.1",
     "lodash": "^4.17.4",
