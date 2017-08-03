@@ -31,13 +31,9 @@ class InitCommandHandler {
   }
 
   initialize () {
-    console.log(this);
-
     return this.kudaJsonHandler.writeEmptyFile()
       .then(() => this.prompts.promptNewService())
-      .tap(() => console.log('hello'))
       .then(service => {
-        console.log(this);
         return Promise.all([
           this.kudaJsonHandler.writeService(service),
           this.packageJsonHandler.writeService(service)

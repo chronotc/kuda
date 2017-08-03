@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
+    "test": "mocha './{,!(node_modules)/**/}*.test.js'",
     "fix": "semistandard --fix"
   },
   "repository": {
@@ -43,6 +43,7 @@
     "string-template": "^1.0.0"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
     "mocha": "^3.5.0",
     "semistandard": "^11.0.0"
   }
