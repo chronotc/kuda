@@ -1,6 +1,6 @@
 {
   "name": "kuda",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple deployment tool for monorepo",
   "main": "index.js",
   "engines": {
