@@ -91,4 +91,11 @@ services: {
 
 ### TODO
 
-child process maxBuffer issue. might need to stream..
+-[child process maxBuffer issue. might need to stream..] Increased buffer to fix
+-> Add some tests...
+-> currently change detection is based on package.json, 
+can swap out for other means like using git commits (compare with s3 stored remote), git tags, timestamps
+-> allow service and version name to be accessible in tasks (attach to process.env after reading values)
+(ie <SERVICE_NAME> <SERVICE_VERSION>)
+-> allow users to control deployment flow by creating dependency tree
+-> allow different types of task (or not) (ie. tasks that are run regardless of whether there has been change)
