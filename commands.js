@@ -11,7 +11,7 @@ module.exports = {
   add: {
     handler: context.createAddCommandHandler().handle
   },
-  deploy: {
-    handler: context.createDeployCommandHandler().handle
+  run: {
+    handler: context.createRunCommandHandler().handle
   }
 };

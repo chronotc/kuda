@@ -2,7 +2,7 @@ const autoBind = require('auto-bind');
 const Bluebird = require('bluebird');
 const chalk = require('chalk');
 
-class DeployCommandHandler {
+class RunCommandHandler {
   constructor ({ kudaJsonHandler, serviceHandler }) {
     this.kudaJsonHandler = kudaJsonHandler;
     this.serviceHandler = serviceHandler;
@@ -13,7 +13,7 @@ class DeployCommandHandler {
   handle () {
     return this.kudaJsonHandler.readAllServices()
       .then(services => {
-        const serviceExecutables = services.map(service => () => this.serviceHandler.deployService(service.name));
+        const serviceExecutables = services.map(service => () => this.serviceHandler.run(service.name));
         return Bluebird.mapSeries(serviceExecutables, promise => promise());
       })
       .catch(err => {
@@ -23,4 +23,4 @@ class DeployCommandHandler {
   }
 }
 
-module.exports = DeployCommandHandler;
+module.exports = RunCommandHandler;

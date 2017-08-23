@@ -1,7 +1,7 @@
 const autoBind = require('auto-bind');
 
 const AddCommandHandler = require('./command-handlers/add');
-const DeployCommandHandler = require('./command-handlers/deploy');
+const RunCommandHandler = require('./command-handlers/run');
 const InitCommandHandler = require('./command-handlers/init');
 const prompts = require('./lib/prompts');
 
@@ -24,7 +24,7 @@ class Context {
     });
   }
 
-  createDeployCommandHandler () {
+  createRunCommandHandler () {
     const packageVersionChangeDetector = new PackageVersionChangeDetector({
       remoteStateHandler: this.fileHandlerFactory.getHandler('remote'),
       packageJsonHandler: this.fileHandlerFactory.getHandler('package')
@@ -40,7 +40,7 @@ class Context {
       changeDetector: packageVersionChangeDetector
     });
 
-    return new DeployCommandHandler({
+    return new RunCommandHandler({
       kudaJsonHandler: this.fileHandlerFactory.getHandler('kuda'),
       serviceHandler
     });

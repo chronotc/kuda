@@ -21,7 +21,7 @@ You can continue adding services using the add command or alternatively, update 
 kuda add
 ```
 
-### deploy
+### run
 
 This command will attempt to run all the tasks for each service defined in `kuda.json`. Once all tasks have completed successfully, the `remoteState` is updated.
 
@@ -30,7 +30,7 @@ The `localVersion` (derived from `package.json`) and the `remoteVersion` are com
 Thus, in order to trigger tasks to run, the user is required to increment the `version` inside `<service>/package.json`
 
 ```
-KUDA_ENV=staging kuda deploy
+KUDA_ENV=staging kuda run
 ```
 
 ### Typical folder structure
@@ -95,7 +95,7 @@ services: {
 
 * Add some tests...
 
-* currently change detection is based on package.json, 
+* currently change detection is based on package.json,
 
 can swap out for other means like using git commits (compare with s3 stored remote), git tags, timestamps
 
