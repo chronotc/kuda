@@ -1,33 +1,17 @@
-const prompts = require('./lib/prompts');
-const fileHandler = require('./lib/file-handler');
-const KudaJsonHandler = require('./lib/kuda-json-handler');
-const PackageJsonHandler = require('./lib/package-json-handler');
-const taskHandler = require('./lib/task-handler');
-const ServiceHandler = require('./lib/service-handler');
-const RemoteStateHandler = require('./lib/remote-state-handler');
+const Context = require('./context');
+const fileHandlerFactory = require('./lib/file-handler-factory');
+fileHandlerFactory.init();
 
-const DeployCommandHandler = require('./command-handlers/deploy');
-const AddCommandHandler = require('./command-handlers/add');
-const InitCommandHandler = require('./command-handlers/init');
-
-const kudaJsonHandler = new KudaJsonHandler({ fileHandler });
-const packageJsonHandler = new PackageJsonHandler({ fileHandler });
-const remoteStateHandler = new RemoteStateHandler({ kudaJsonHandler });
-
-const serviceHandler = new ServiceHandler({ taskHandler, remoteStateHandler, packageJsonHandler });
-
-const addCommandHandler = new AddCommandHandler({ kudaJsonHandler, packageJsonHandler, prompts });
-const deployCommandHandler = new DeployCommandHandler({ kudaJsonHandler, serviceHandler });
-const initCommandHandler = new InitCommandHandler({ kudaJsonHandler, packageJsonHandler, prompts });
+const context = new Context({ fileHandlerFactory });
 
 module.exports = {
   init: {
-    handler: initCommandHandler.handle
+    handler: context.createInitCommandHandler().handle
   },
   add: {
-    handler: addCommandHandler.handle
+    handler: context.createAddCommandHandler().handle
   },
   deploy: {
-    handler: deployCommandHandler.handle
+    handler: context.createDeployCommandHandler().handle
   }
 };
