@@ -33,6 +33,12 @@ Thus, in order to trigger tasks to run, the user is required to increment the `v
 KUDA_ENV=staging kuda run
 ```
 
+You can now target a specific service using
+
+```
+KUDA_ENV=staging kuda run -s foo
+```
+
 ### Typical folder structure
 ```
 monorepo

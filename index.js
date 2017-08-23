@@ -9,4 +9,4 @@ if (!capturedCommand) {
   throw new Error('Please use one of the following commands. [ init / add / run ]');
 }
 
-module.exports = () => SUPPORTED_COMMANDS[capturedCommand].handler();
+module.exports = () => SUPPORTED_COMMANDS[capturedCommand].handler(argv);

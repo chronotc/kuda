@@ -10,8 +10,9 @@ class RunCommandHandler {
     autoBind(this);
   }
 
-  handle () {
+  handle (options) {
     return this.kudaJsonHandler.readAllServices()
+      .then(services => this.handleTarget({ target: options.s, services }))
       .then(services => {
         const serviceExecutables = services.map(service => () => this.serviceHandler.run(service.name));
         return Bluebird.mapSeries(serviceExecutables, promise => promise());
@@ -20,6 +21,14 @@ class RunCommandHandler {
         console.log(chalk.red(err.stack));
         process.exit(1);
       });
+  }
+
+  handleTarget ({ target, services }) {
+    if (!target) {
+      return services;
+    }
+
+    return services.filter(({ name }) => target.toString() === name);
   }
 }
 
