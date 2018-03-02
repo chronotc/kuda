@@ -1,0 +1,6 @@
+steps:
+  - command: cd plugins/s3-source && yarn install && yarn run test
+    plugins:
+      docker#v1.1.1:
+        image: "node:6.13.0-alpine"
+        workdir: /app
