@@ -1,0 +1,38 @@
+{
+  "name": "@kuda/s3-source",
+  "version": "1.0.0",
+  "description": "Read and write from s3",
+  "main": "index.js",
+  "engines": {
+    "node": ">=6.10.3"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chronotc/kuda.git"
+  },
+  "author": "chronotc",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^22.1.4",
+    "jest": "^22.4.2",
+    "ts-jest": "^22.4.1",
+    "typescript": "^2.7.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
