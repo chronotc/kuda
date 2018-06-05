@@ -1,5 +1,8 @@
+env:
 steps:
   - label: triggering
+    env:
+      DEBUG: true
     plugins:
       chronotc/monorepo-diff:
         diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
