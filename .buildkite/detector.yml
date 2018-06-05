@@ -3,7 +3,7 @@ steps:
     env:
       DEBUG: true
     plugins:
-      chronotc/monorepo-diff/tree/fix-build-vars:
+      chronotc/monorepo-diff#947adc4b27eb68ec6081b4f5e69fd82db69d5e81:
         diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
         watch:
           - path: "bar/"
