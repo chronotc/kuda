@@ -3,8 +3,8 @@ steps:
     plugins:
       chronotc/monorepo-diff:
         diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
-          watch:
-            - path: "bar/"
-              config:
-                trigger: "staging-bar"
+        watch:
+          - path: "bar/"
+            config:
+              trigger: "staging-bar"
 
