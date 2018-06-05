@@ -2,6 +2,7 @@ steps:
   - label: triggering
     env:
       DEBUG: true
+      SOMESTUFF: "thestuff"
     plugins:
       chronotc/monorepo-diff#fix-build-vars:
         diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
@@ -9,4 +10,8 @@ steps:
           - path: "bar/"
             config:
               trigger: "staging-bar"
+              build:
+                env:
+                  - FOO=BAR
+                  - SOMESTUFF
 
