@@ -6,7 +6,7 @@ set -ueo pipefail
 
 COMMIT_HASH=$1
 
-BRANCH_POINT_COMMIT=$(./find-branch-point.sh "$COMMIT_HASH")
+BRANCH_POINT_COMMIT=$(./examples/find-branch-point.sh "$COMMIT_HASH")
 echo >&2 "Cannot find latest build. Running diff against: $BRANCH_POINT_COMMIT"
 diff=$(git diff --name-only "$BRANCH_POINT_COMMIT")
 echo "$diff"
