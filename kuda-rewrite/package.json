@@ -1,0 +1,36 @@
+{
+  "name": "@kuda/s3-source",
+  "version": "1.0.0",
+  "description": "Read and write from s3",
+  "main": "kuda.js",
+  "engines": {
+    "node": ">=6.10.3"
+  },
+  "scripts": {
+    "start": "npm run build && node ./dist/kuda.js",
+    "test": "jest",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chronotc/kuda.git"
+  },
+  "author": "chronotc",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.44",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
+    "babel-loader": "^8.0.0-beta.2",
+    "jest": "^22.4.2",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "commander": "^2.14.1",
+    "lodash.includes": "^4.3.0"
+  }
+}

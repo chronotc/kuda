@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "name": "foo",
+      "command": "echo {SOME_ENV}"
+    },
+    {
+      "name": "bar",
+      "command": "cat file.json stuff.json"
+    }
+  ]
+}

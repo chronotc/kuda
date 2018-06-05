@@ -1,0 +1,10 @@
+steps:
+  - label: triggering
+    plugins:
+      chronotc/monorepo-diff:
+        diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
+          watch:
+            - path: "bar/"
+              config:
+                trigger: "staging-bar"
+

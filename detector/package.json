@@ -1,0 +1,17 @@
+{
+  "name": "detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "detect": "node detect.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "execa": "^0.9.0",
+    "mkdirp": "^0.5.1"
+  }
+}

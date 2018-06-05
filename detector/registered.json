@@ -1,0 +1,12 @@
+[
+  {
+    "name": "foo",
+    "path": "detector/example/foo",
+    "slug": "staging-foo"
+  },
+  {
+    "name": "bar",
+    "path": "detector/example/bar",
+    "slug": "staging-bar"
+  }
+]

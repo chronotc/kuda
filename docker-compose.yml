@@ -1,0 +1,19 @@
+version: '3'
+services:
+  detector:
+    build: ./detector
+    volumes:
+      - "./detector/dist:/usr/src/app/dist"
+    volumes:
+      - /usr/bin/buildkite-agent:/bin/buildkite-agent
+    environment:
+      - BUILDKITE_AGENT_ACCESS_TOKEN
+      - BUILDKITE_BUILD_NUMBER
+      - BUILDKITE_JOB_ID
+      - ENVIRONMENT=staging
+  s3-source:
+    build: ./s3-source
+    volumes:
+      - "./s3-source/dist:/usr/src/app/dist"
+    environment:
+      - SILLA=HI

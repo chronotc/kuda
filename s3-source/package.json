@@ -7,7 +7,9 @@
     "node": ">=6.10.3"
   },
   "scripts": {
-    "test": "jest"
+    "start": "node index.js",
+    "test": "jest",
+    "generate": "./generate.sh"
   },
   "repository": {
     "type": "git",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@types/jest": "^22.1.4",
     "jest": "^22.4.2",
+    "mocha": "^5.0.1",
     "ts-jest": "^22.4.1",
     "typescript": "^2.7.2"
   },
@@ -34,5 +37,8 @@
       "json",
       "node"
     ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.5"
   }
 }
