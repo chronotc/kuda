@@ -5,7 +5,7 @@ steps:
       SOMESTUFF: "thestuff"
     plugins:
       chronotc/monorepo-diff#handle-diff-command-error:
-        diff: "./examples/diff.s ${BUILDKITE_COMMIT}"
+        diff: "./examples/diff. ${BUILDKITE_COMMIT}"
         watch:
           - path: "bar/"
             config:
