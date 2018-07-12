@@ -4,7 +4,7 @@ steps:
       DEBUG: true
       SOMESTUFF: "thestuff"
     plugins:
-      chronotc/monorepo-diff#5304d7a749a2090843afce4e964d8c4b7e302551:
+      chronotc/monorepo-diff#escape-characters:
         diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
         watch:
           - path: "bar/"
