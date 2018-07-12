@@ -3,17 +3,17 @@ steps:
     env:
       DEBUG: true
       SOMESTUFF: "thestuff"
-    plugins:
-      chronotc/monorepo-diff#escape-characters:
-        diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
-        watch:
-          - path: "bar/"
-            config:
-              trigger: "staging-bar"
-              build:
-                env:
-                  - FOO=BAR
-                  - SOMESTUFF
+    # plugins:
+    #   chronotc/monorepo-diff#escape-characters:
+    #     diff: "./examples/diff.sh ${BUILDKITE_COMMIT}"
+    #     watch:
+    #       - path: "bar/"
+    #         config:
+    #           trigger: "staging-bar"
+    #           build:
+    #             env:
+    #               - FOO=BAR
+    #               - SOMESTUFF
 
 
 
