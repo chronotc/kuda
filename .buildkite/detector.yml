@@ -1,5 +1,5 @@
 steps:
-  - label: triggering
+  - label: "triggering\nstuff"
     env:
       DEBUG: true
       SOMESTUFF: "thestuff"
@@ -11,7 +11,6 @@ steps:
             config:
               trigger: "staging-bar"
               build:
-                message: "hello\nstuff"
                 env:
                   - FOO=BAR
                   - SOMESTUFF
