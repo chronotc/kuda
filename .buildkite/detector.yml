@@ -1,6 +1,6 @@
 steps:
   - label: "triggering\nstuff"
-    command: "echo hello"
+    command: "echo $BUILDKITE_MESSAGE"
     env:
       DEBUG: true
       SOMESTUFF: "thestuff"
