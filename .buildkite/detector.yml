@@ -12,6 +12,7 @@ steps:
             config:
               trigger: "staging-bar"
               build:
+                message: "oo fancy stuff happening \"hehe\" \n cool"
                 env:
                   - FOO=BAR
                   - SOMESTUFF
